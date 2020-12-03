@@ -1,9 +1,24 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>info</ion-title>
+  <ion-toolbar color="tertiary">
+    <ion-title>INFORMATION</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-
+<ion-content padding>
+ 
+  <ion-card *ngIf="information">
+    <ion-card-header>
+      <ion-card-title>
+        {{ information.Title }}
+      </ion-card-title>
+      <ion-card-subtitle>
+        {{ information.Year }}
+      </ion-card-subtitle>
+    </ion-card-header>
+    <ion-card-content>
+      <img [src]="information.Poster" class="info-img">
+      {{ information.Plot }}
+    </ion-card-content>
+  </ion-card>
+  
 </ion-content>
