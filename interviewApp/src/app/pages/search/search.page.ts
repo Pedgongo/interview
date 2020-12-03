@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { appInitialize } from '@ionic/angular/app-initialize';
+import { Observable } from 'rxjs';
+import { RequestApiService } from 'src/app/services/request-api.service';
 
 @Component({
   selector: 'app-search',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SearchPage implements OnInit {
 
-  constructor() { }
+  results: Observable<any>;
+  searchTerm: string = '';
 
-  ngOnInit() {
+  constructor(private requestApi: RequestApiService) { }
+
+  ngOnInit() {    
   }
 
+  searchChanged(){
+    this.results = this.requestApi.searchData(this.searchTerm);
+  }
 }
