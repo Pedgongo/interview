@@ -23,7 +23,7 @@ export class RequestApiService {
   }
 
   getData(id: string) {
-    return this.http.get(`${this.url}?i={id}&plot=full&apiKey=${this.apiKey}`);
+    return this.http.get(`${this.url}?i=${id}&plot=full&apiKey=${this.apiKey}`);
   }
 
 }
